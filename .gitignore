@@ -1,0 +1,13 @@
+#.gitignore
+
+# Base de datos real de desarrollo (Local)
+chatapp.db
+
+# Archivos temporales de Python y Pytest
+__pycache__/
+.pytest_cache/
+.coverage
+
+# Archivos ocultos del sistema de Mac
+.DS_Store
+

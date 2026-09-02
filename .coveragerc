@@ -1,0 +1,5 @@
+[report]
+# Le dice a coverage que ignore líneas específicas que coincidan con estos patrones:
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
