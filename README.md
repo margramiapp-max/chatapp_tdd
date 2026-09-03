@@ -1,26 +1,18 @@
-# README
-"""
-En la metodología TDD, una vez que la lógica  (las funciones matemáticas) está limpia, refactorizada y protegida por pruebas, el siguiente paso es separar la interfaz de usuario (la entrada por teclado) de la lógica pura.
-En TDD, nunca se ponen inputs de teclado (input()) dentro de las funciones que tienen las pruebas, porque las pruebas se ejecutan automáticamente y no pueden "escribir" en la terminal.
+# Aplicacion de chat con creacion de usuarios, Envio de mensajes y moderacion 
 
-Separación de Responsabilidades (SRP): el archivo calculadora.py solo sabe 
-procesar datos (lógica pura). 
+Este projecto implementa una creacion de perfiles de usuario, creado rigurosamente bajo la 
+metodologia TDD
 
-Tu archivo main.py solo sabe hablar con el usuario (interfaz).
+## Tecnologia utilizadas 
+**Python 3.12**
+**Flask** (Para construcción de la API REST)
+**SQLite3** (inicialemte con almacenamiento de memoria compartida)
+**Pytest & Pytest-Cov** (motor de pruebas y resporte estadistico de cobertura)
+**GitHub Actions** (Integración Continua para ejecución automática de tests)
 
-Automatización: 
-Se puedes cambiar main.py para que en lugar del teclado lea los números de 
-un archivo web o una base de datos, y tus pruebas 
-en calculadora.py seguirán funcionando intactas sin cambiar una sola línea.
-"""
+##Notas 
+Para ejecutar las pruebas localmente y verificar la cobertura del 100%:
+```bash
+pytest --cov=. --cov-report=term-missing
+```
 
-"""
-pip install flask pytest pytest-cov
-
-
-Ahora estoy probando la metodologia TDD en desarrollo WEB con Flask, y una sqlite3. Los archivos correspondientes
-a estas pruebas son 
-app.py
-database.py
-test_app.py
-test_database.py
