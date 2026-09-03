@@ -15,11 +15,11 @@ jobs:
     steps:
     # 1. Descarga el código del repositorio en la máquina virtual
     - name: Descargar código fuente
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.2.2
 
     # 2. Configura el entorno de Python 3.12 en la nube
     - name: Configurar Python 3.12
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v5.4.0
       with:
         python-version: "3.12"
 
