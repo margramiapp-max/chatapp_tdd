@@ -1,16 +1,13 @@
-# app.py es la iterfaz que llama a las funciones en database.py
+# app.py es la interfaz que llama a las funciones en database.py. Las respuestas que se envían al cliente son en formato JSON, 
 
-from flask import Flask, request, jsonify
+
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 import database
 
 app = Flask(__name__)
 DB_FILE = "chatapp.db"
 
-"""def obtener_conexion():
-    conn = sqlite3.connect(DB_FILE)
-    database.inicializar_db(conn)
-    return conn"""
 
 
 def obtener_conexion():
@@ -26,19 +23,7 @@ def obtener_conexion():
 def inicio():
     return "¡Servidor de ChatApp funcionando correctamente!"
 
-"""
-@app.route("/usuarios", methods=["POST"])
-def api_crear_usuario():
-    datos = request.json
-    conn = obtener_conexion()
-    try:
-        user_id = database.crear_usuario(conn, datos["username"], datos["nombre"], datos.get("biografia", ""))
-        return jsonify({"id": user_id, "mensaje": "Perfil creado con éxito"}), 201
-    except sqlite3.IntegrityError:
-        return jsonify({"error": "El nombre de usuario ya existe"}), 400
-    finally:
-        conn.close()
-"""
+
 
 @app.route("/usuarios", methods=["POST"])
 def api_crear_usuario():
@@ -85,6 +70,9 @@ def api_eliminar_usuario(user_id):
     database.eliminar_usuario(conn, user_id)
     conn.close()
     return jsonify({"mensaje": "Perfil eliminado"}), 200
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

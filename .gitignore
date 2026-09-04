@@ -3,6 +3,8 @@
 # Base de datos real de desarrollo (Local)
 chatapp.db
 personal_notes.md
+aVer.py
+app.py
 
 # Archivos temporales de Python y Pytest
 __pycache__/
